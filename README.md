@@ -37,15 +37,8 @@ source venv/Scripts/activate
 
 ```bash
 pip install -r requirements.txt
+python -c "from app.core.config import init_db; init_db()"
 ```
-
-### 🔐 Настройка доступа к Google Cloud
-1. Перейдите в Google Cloud Console
-
-2.Создайте сервисный аккаунт и скачайте JSON-файл
-
-3. Поместите его в директорию credentials/ под именем service.json
-
 
 ### ▶️ Запуск проекта
 ```bash
@@ -55,16 +48,23 @@ uvicorn app.main:app --reload
 ### 🧭 Структура проекта
 ```bash
 backend/
-│
 ├── app/
-│   ├── main.py            # Точка входа FastAPI
-│   ├── routers/           # Эндпоинты API
-│   ├── services/          # Логика загрузки и работы с Firestore
-│   ├── core/              # Конфигурации и инициализация GCP
-│
-├── credentials/           # service.json ключ
-├── requirements.txt       # Зависимости
-└── README.md
+│   ├── core/
+│   │   ├── config.py          # Configuration and database setup
+│   │   ├── logger.py          # Logging configuration
+│   ├── models/
+│   │   ├── image.py           # Data models
+│   ├── services/
+│   │   ├── image_service.py    # Image handling logic
+│   │   ├── db_service.py      # SQLite database operations
+│   ├── routes/
+│   │   ├── image_router.py    # API routes
+│   ├── static/
+│   │   ├── uploads/           # Directory for uploaded images
+│   ├── __init__.py
+├── main.py                    # FastAPI app entry point
+├── requirements.txt           # Dependencies
+├── README.md                  # Project documentation
 
 ```
 

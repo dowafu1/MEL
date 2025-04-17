@@ -175,3 +175,4 @@ cython_debug/
 
 # Игнорировать папку с конфиденциальными данными
 /backend/credentials/*
+database.db
