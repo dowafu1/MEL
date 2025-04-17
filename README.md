@@ -15,21 +15,25 @@
 ```bash
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
+```
 
 ### 2. 🧪 Создание виртуального окружения (Windows)
 
 ```bash
 python -m venv venv
+```
 
 ### 3. ⚙️ Активация окружения (Windows)
 
 ```bash
 .\.venv\Scripts\activate
+```
 
 ### 4. 📥 Установка зависимостей
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### 🔐 Настройка доступа к Google Cloud
 1. Перейдите в Google Cloud Console
@@ -38,9 +42,11 @@ pip install -r requirements.txt
 
 3. Поместите его в директорию credentials/ под именем service.json
 
+
 ### ▶️ Запуск проекта
-   ```bash
-    uvicorn main:app --reload
+```bash
+uvicorn main:app --reload
+```
 
 ### 🧭 Структура проекта
 backend/
