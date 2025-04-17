@@ -43,31 +43,29 @@ const DownloadBlock = () => {
     };
     
     const handleSubmit = async () => {
+        // Валидация
         if (!leftFile || rightFiles.length === 0) {
-        alert('Пожалуйста, загрузите файлы в оба блока');
-        return;
+          alert('Пожалуйста, загрузите файлы в оба блока');
+          return;
     }
-    const isAnyCheckboxChecked = Object.values(checkedState).some(Boolean);
-        if (!isAnyCheckboxChecked) {
-            alert('Пожалуйста, выберите хотя бы один тип дефекта.');
-            return;
-    }
-    
     const selectedDefects = defectTypes
-        .filter((_, index) => checkedState[`checkbox${index + 1}`])
-        .map(defect => defect.id);
-    if (selectedDefects.length === 0) {
-        alert('Пожалуйста, выберите хотя бы один тип дефекта');
+          .filter((_, i) => checkedState[`checkbox${i+1}`])
+          .map(d => d.id);
+         if (selectedDefects.length === 0) {
+        alert('Пожалуйста, выберите хотя бы один тип дефекта.');
         return;
     }
-    const formData = new FormData();
-    formData.append('example', leftFile);
-    rightFiles.forEach((file) => {
-        formData.append(`filesToCheck`, file);
-    });
     
-    // Добавляем выбранные типы дефектов
+    const formData = new FormData();
+    // 1) Массив файлов files[0] = эталон, files[1..n] = файлы на проверку
+    formData.append('files[0]', leftFile);
+    rightFiles.forEach((file, idx) => {
+      formData.append(`files[${idx + 1}]`, file);
+    });
+    // 2) Текстовая часть JSON-массива ID дефектов
     formData.append('defectTypes', JSON.stringify(selectedDefects));
+
+
     try {
         const response = await fetch('https://....', { // сюда апи 
             method: 'POST',
