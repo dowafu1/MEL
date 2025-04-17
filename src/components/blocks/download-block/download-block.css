@@ -14,6 +14,60 @@
     text-align-last: left;
 }
 
+.download-block__typedefects{
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.download-block__typedefects-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.download-block__checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.download-block__checkbox-input {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #77B2D3;
+}
+
+.download-block__checkbox-input:hover {
+  accent-color: #77B2D3;
+}
+.download-block__checkbox-input:checked::before {
+  content: "✓";
+  position: absolute;
+  color: white; /* Белая галочка */
+  font-size: 18px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.download-block__checkbox-label {
+  cursor: pointer;
+  user-select: none;
+  font-size: 20px;
+  color: #333;
+}
+
 .download-block__blocks{
     display: flex;
     flex-wrap: wrap;
@@ -65,21 +119,29 @@
     padding: 0;
     margin-top: 32px;
     width: 500px;
-    height: 82px;
-    font-size: 36px;
+    height: 68px;
+    font-size: 28px;
     background: linear-gradient(45deg, #9021AC, #C8459F);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+
 }
 
 .download-block__svg{
-    margin-top: 180px;
+    width: 107px;
+    height: 107px;
+    
     
 }
 
-.download-block__download2{
-    margin-top: 70px;
+.download-block__download{
+    margin-top: 250px;
+
 }
 
-.download-block__text2{
+.download-block__text1{
+    line-height: 1.4; 
     align-items: center;
     font-size: 32px;
     color: #000;
@@ -131,9 +193,13 @@
     transition: all 0.3s ease;
     width: 400px;
     height: 68px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+    
 }
 
 .download-block__submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
 }

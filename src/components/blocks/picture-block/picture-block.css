@@ -163,6 +163,8 @@
     flex-direction: row;
     display: flex;
     gap: 40px;
+    transition: all 0.3s ease;
+
 }
 
 .picture-block__btn2{
