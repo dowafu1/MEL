@@ -1,7 +1,7 @@
 import os
 import uuid
 from fastapi import UploadFile, HTTPException
-from core.config import bucket
+from app.core.config import bucket
 
 async def upload_image(image_file: UploadFile) -> str:
     try:

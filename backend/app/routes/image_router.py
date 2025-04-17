@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, Form
 from fastapi.responses import JSONResponse
-from services.image_service import upload_image
-from services.firestore_service import save_image_metadata, get_all_items, get_item_by_id
+from app.services.image_service import upload_image
+from app.services.firestore_service import save_image_metadata, get_all_items, get_item_by_id
 
 router = APIRouter()
 

@@ -23,10 +23,14 @@ cd your-repository
 python -m venv venv
 ```
 
-### 3. ⚙️ Активация окружения (Windows)
+### 3. ⚙️ Активация окружения (Windows, Linux)
 
 ```bash
-.\.venv\Scripts\activate
+(Windows)
+.\.venv\Scripts\activate 
+
+(Git Bash VS Code)
+source venv/Scripts/activate 
 ```
 
 ### 4. 📥 Установка зависимостей
@@ -45,7 +49,7 @@ pip install -r requirements.txt
 
 ### ▶️ Запуск проекта
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ### 🧭 Структура проекта
@@ -53,14 +57,13 @@ uvicorn main:app --reload
 backend/
 │
 ├── app/
-│   ├── main.py              # Основной файл приложения
-│   ├── core/config.py       # Настройки и инициализация Firestore/Storage
-│   ├── services/            # Загрузка файлов и работа с базой
-│   └── routers/             # Эндпоинты API
+│   ├── main.py            # Точка входа FastAPI
+│   ├── routers/           # Эндпоинты API
+│   ├── services/          # Логика загрузки и работы с Firestore
+│   ├── core/              # Конфигурации и инициализация GCP
 │
-├── credentials/
-│   └── service.json         # Учетные данные Google Cloud
-│
-├── requirements.txt         # Зависимости проекта
+├── credentials/           # service.json ключ
+├── requirements.txt       # Зависимости
 └── README.md
+
 ```

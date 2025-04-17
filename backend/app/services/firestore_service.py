@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 from fastapi import HTTPException
-from core.config import db
+from app.core.config import db
 from typing import Optional, List, Dict
 
 async def save_image_metadata(image_url: str, description: str, image_id: Optional[str] = None) -> dict:

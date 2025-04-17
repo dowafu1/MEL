@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from routes.image_router import router as image_router
+from app.routes.image_router import router as image_router
+import uvicorn
 
 app = FastAPI()
 
@@ -10,5 +11,4 @@ async def root():
     return {"message": "Добро пожаловать в API!"}
 
 if __name__ == '__main__':
-    import uvicorn
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='localhost', port=8000)
