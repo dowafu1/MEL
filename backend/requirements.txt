@@ -5,19 +5,8 @@ uvicorn[standard]==0.29.0
 # Работа с формами и изображениями
 python-multipart==0.0.9
 
-# Google Cloud
-google-cloud-firestore==2.14.0
-google-cloud-storage==2.16.0
-google-auth==2.29.0
-
 # Логирование и работа с окружением
 python-dotenv==1.0.1
-
-# Для ML (будущее использование)
-#numpy==1.26.4
-#pandas==2.2.2
-#scikit-learn==1.4.2
-#Pillow==10.3.0
 
 # Для тестирования
 pytest==8.1.1
