@@ -105,7 +105,7 @@ async def add_item(
         logger.error(f"Ошибка добавления элемента: {e}")
         raise HTTPException(status_code=500, detail="Внутренняя ошибка сервера")
 
-
+#dskfjsdlfkjdslfkd
 @app.get('/items')
 async def get_items():
     """Получает список всех элементов"""
