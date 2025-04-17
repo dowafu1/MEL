@@ -23,11 +23,7 @@
     flex-wrap: wrap;
     gap: 50px;
 }
-.picture-block__blocks2{
-    display: none;
-    flex-wrap: wrap;
-    gap: 50px;
-}
+
 .picture-block__text{
     color: #000;
     font-size: 38px;
@@ -51,6 +47,30 @@
     height: 60px;
 }
 
+.picture-block__arrowbtn{
+    all: unset;
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -1100px; /* Сдвигает стрелку влево */
+    
+}
+
+.picture-block__svg1.selected {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(93%) saturate(245%) hue-rotate(180deg) brightness(97%) contrast(92%);
+}
+
+.picture-block__arrow{
+    height: 100px;
+    width: 100px;
+}
+
 .picture-block__left-block{
     position: relative; 
     display: inline-block;
@@ -67,16 +87,16 @@
     border-radius: 16px;
 }
 
-.picture-block__right-block{
-    position: relative; 
+.picture-block__right-block {
+    position: relative;
     display: inline-block;
     align-items: start;
     width: 570px;
-    height: 512px;
+    min-height: 512px;
     background-color: #fff;
     border-radius: 16px;
+    flex-grow: 1;  /* Чтобы блок не сжимался */
 }
-
 .picture-block__name-file{
     margin-top: 22px;
     margin-bottom: 22px;
@@ -103,11 +123,15 @@
     font-weight: bold;
 }
 
-.picture-block__results{
-    flex-direction: row;
-    display: flex;
-    gap: 80px;
-    margin-left: 30px; 
+.picture-block__result {
+    position: relative;
+    display: inline-block;
+    width: 570px;
+    min-height: 160px;
+    background-color: #F3F1FE;
+    text-align: left;
+    color: #000;
+    margin-bottom: 20px;  /* Отступ между результатом и дефектами */
 }
  
 .picture-block__result-percent{
@@ -122,14 +146,15 @@
     font-size: 16px;
 }
 
-.picture-block__defects{
-    position: relative; 
-    display: inline-block;
+.picture-block__defects {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
     width: 570px;
-    height: 160px;
+    min-height: 160px;
     text-align: left;
     color: #000;
-    
+    justify-content: flex-start;
 }
 
 .picture-block__defect-text{
@@ -139,10 +164,11 @@
     font-weight: bold;
 }
 
-.picture-block__defect-list{
-    flex-direction: column;
+.picture-block__defect-list {
     display: flex;
+    flex-direction: column;
     margin-left: 30px;
+    flex-shrink: 0;  /* Запрещаем сжатие блока дефектов */
 }
 
 .picture-block__defect{
@@ -185,132 +211,4 @@
     font-size: 16px;
     background: linear-gradient(45deg, #F32C6D, #CB1D95);
 
-}
-
-
-
-@media (max-width: 1250px){
-    .picture-block__container{
-        max-width: 286px;
-    }
-
-    .picture-block__title{
-        gap: 10px;
-    }
-
-    .picture-block__text{
-        font-size: 20px;
-    }
-
-    .picture-block__btn1{
-        display: none;
-    }
-
-    .picture-block__blocks1{
-        display: none;
-    }
-
-    .picture-block__svg{
-        display: none;
-    }
-
-    .picture-block__blocks2{
-        display: flex;
-        position: relative;
-        display: inline-block;
-        align-items: start;
-        width: 286px;
-        border-radius: 15px;
-    }
-
-    .picture-block__img{
-        width: 286px;
-        height: 252px;
-        border-radius: 15px;
-    }
-
-    .picture-block__namefile-overlay{
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 40px;
-        background-color: #7E79A6;
-        opacity: 70%;
-        border-radius: 15px 15px 0 0;
-        z-index: 10;
-        text-align: center;
-    }
-    .picture-block__namefile-text{
-        padding: 7px 0 0 20px;
-
-    }
-
-    .picture-block__results1{
-        text-align: left;
-        margin-top: 10px;
-        width: 286px;
-        height: 70px;
-        background-color: #fff;
-        border-radius: 15px;
-        color: #000;
-    }
-    .picture-block__results-text1{
-        font-size: 20px;
-        font-weight: bold;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-    .picture-block__results-text2{
-        margin-left: 20px;
-
-        font-size: 16px;
-    }
-
-    .picture-block__defects{
-        width: 286px;
-        height: 110px;
-        background-color: #fff;
-        border-radius: 15px;
-        margin-top: 13px;
-    }
-
-    .picture-block__defect-text{
-        margin-left: 20px;
-        margin-top: 20px;
-        font-size: 16px;
-    }
-
-    .picture-block__defect-list{
-        margin-left: 20px;
-    }
-
-    .picture-block__defect{
-        gap: 60px;
-    }
-    .picture-block__defect-text1{
-        font-size: 9px;
-    }
-
-    .picture-block__svgs{
-        display: flex;
-        width: 54px;
-        height: 54px;
-    }
-
-    .picture-block__btns{
-        margin-top: 20px;
-        margin-left: 0px;
-        align-items: center;
-        flex-direction: row;
-        display: flex;
-        gap: 30px;
-        transition: all 0.3s ease;
-    }
-
-    .picture-block__btn2{
-        width: 200px;
-        height: 54px;
-    }
 }
