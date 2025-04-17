@@ -63,8 +63,8 @@ input[type="checkbox"] {
 
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: #77B2D3; /* Цвет фона */
-    border-color: #77B2D3; /* Цвет рамки */
+    background-color: #2196F3; /* Цвет фона */
+    border-color: #0b7dda; /* Цвет рамки */
 }
 
 

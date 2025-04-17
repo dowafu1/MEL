@@ -1,0 +1,119 @@
+
+.main-doble__container {
+    
+    @media (max-width: 700px) {
+        font-size: 32px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 180px;
+    flex-direction: row;    }
+}
+
+
+
+.main-doble__text {
+    
+    display: none;
+    @media (max-width: 700px) {
+        margin-top: -250px;
+    display: flex;
+        font-size: 32px;
+    color: #000000;
+    display: block;
+    font-size: 38px;
+    text-align-last: left;
+    font-family: "Open Sans", ExtraBold;
+    }
+    @media (max-width: 480px) {
+        margin-top: -250px;
+        font-size: 32px;
+    }
+    @media (max-width: 450px) {
+        
+        margin-top: -280px;
+        font-size: 20px;
+    }
+}
+
+.main-doble__text2 {
+    display: none;
+    @media (max-width: 700px) {
+        display: flex;
+    color: #ffffff;
+    display: block;
+    font-size: 14px;
+    margin-top: 64px;
+    font-family: "Open Sans", Light;
+    }
+}
+
+.main-doble__btnn {
+    display: none;
+    @media (max-width: 700px) {
+        
+        margin-top: -50px;
+    display: flex;
+    line-height: 1; 
+    padding: 0;
+    width: 50px;
+    height: 43px;
+    outline: none;
+    background-color:#77B2D3;}
+}
+
+.main-doble__btn {
+    display: none;
+    @media (max-width: 700px) {
+        margin-top: -43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; 
+    padding: 0;
+    width: 230px;
+    height: 43px;
+    border-radius: 50px;
+    outline: none;
+    background-color:#77B2D3;
+    font-size: 12px;
+    font-family: "Open Sans", Light;}
+}
+
+.main-doble__btn2 {
+    display: none;
+    @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 5; 
+    padding: 0;
+    width: 230px;
+    height: 43px;
+    outline: none;
+    color:#77B2D3;
+    font-size: 16px;
+    font-family: "Open Sans", Light;}
+
+}
+
+.main-doble__img {
+    display: none;
+    @media (max-width: 700px) {
+        display: flex;
+        margin-left: 0px;
+        margin-top: -20px;
+        width: 340px;
+        height: 240px;
+    }
+    @media (max-width: 480px) {
+        width: 300px;
+        height: 250px;
+    }
+    @media (max-width: 450px) {
+        width: 220px;
+        height: 160px;
+    }
+}

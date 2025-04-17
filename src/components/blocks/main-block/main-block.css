@@ -1,14 +1,33 @@
-.main-block__block {
-    margin-top: 193px;
-    margin-left: 115px;
+
+.main-block__container {
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 91px;
+    padding-right: 91px;
+    margin-top: 180px;
+    flex-direction: row;
+    display: grid;
+    grid-template-areas:
+    "text img"
+    "text2 img"
+    
 }
+
+
 
 .main-block__text {
     color: #000000;
     display: block;
-    font-size: 45px;
-    font-family: "Open Sans", ExtraBold; 
+    font-size: 38px;
+    text-align-last: left;
+    font-family: "Open Sans", ExtraBold;
+    @media (max-width: 700px) {
+        display: none;
+    }
 }
 
 .main-block__text2 {
@@ -16,37 +35,48 @@
     display: block;
     font-size: 14px;
     display: flex;
-    font-family: "Open Sans", Semibold; 
     margin-top: 64px;
+    font-family: "Open Sans", Light;
+    @media (max-width: 700px) {
+        display: none;
+    }
 }
 
 .main-block__btn {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    box-sizing: border-box;
-    padding: 14px 17.5px;
-    text-decoration: none;
+    justify-content: center;
+    line-height: 1; 
+    padding: 0;
+    width: 240px;
+    height: 54px;
     border-radius: 50px;
     outline: none;
     background-color:#77B2D3;
+    font-size: 16px;
+    font-family: "Open Sans", Light;
 }
 
 .main-block__btn2 {
-    margin-left: 10px;
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    box-sizing: border-box;
+    justify-content: center;
+    line-height: 1; 
+    padding: 0;
     width: 300px;
+    margin-left: 25px;
     height: 54px;
-    padding: 14px 17.5px;
-    text-decoration: none;
     border-radius: 50px;
     outline: none;
     background-color:#77B2D3;
+    font-size: 16px;
+    font-family: "Open Sans", Light;
+
 }
 
 .main-block__img {
     margin-left: 118px;
+    @media (max-width: 700px) {
+        display: none;
+    }
 }

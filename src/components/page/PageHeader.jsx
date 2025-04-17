@@ -13,20 +13,14 @@ const PageHeader = () => {
                 <h1 className='page-header__text3'>MEN</h1> 
             </div>
 
-
-            
+                <h3 className="page-header__left-block">
             <div className="page-header__container">
             <nav className="page-header__nav">
             <a href="#" className="page-header__nav-link">Главная</a>
             <a href="#" className="page-header__nav-link">Наша команда</a>
             </nav>
-            </div>
-
-            <div className="page-header__oc">
-                <h3 className="page-header__left-block">
-                    <a href="#" className="page-header__btns btns">Обратная связь</a>
+            </div>                    
                 </h3>
-            </div>
 
         </div>
     )
