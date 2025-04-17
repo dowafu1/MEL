@@ -57,13 +57,13 @@ const DownloadBlock = () => {
     }
     
     const formData = new FormData();
-    // 1) Массив файлов files[0] = эталон, files[1..n] = файлы на проверку
-    formData.append('files[0]', leftFile);
-    rightFiles.forEach((file, idx) => {
-      formData.append(`files[${idx + 1}]`, file);
+    formData.append('defectTypes', JSON.stringify(selectedDefects));  // Добавляем дефекты
+    // Добавляем все файлы (с ключом 'files')
+    formData.append('files', leftFile); // Эталонный файл
+    rightFiles.forEach((file) => {
+        formData.append('files', file);  // Остальные файлы
     });
-    // 2) Текстовая часть JSON-массива ID дефектов
-    formData.append('defectTypes', JSON.stringify(selectedDefects));
+    
 
 
     try {
