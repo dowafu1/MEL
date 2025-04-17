@@ -58,16 +58,16 @@ const DownloadBlock = () => {
     
     const formData = new FormData();
     // 1) Массив файлов files[0] = эталон, files[1..n] = файлы на проверку
-    formData.append('files[0]', leftFile);
-    rightFiles.forEach((file, idx) => {
-      formData.append(`files[${idx + 1}]`, file);
+    formData.append('files', leftFile); // эталон
+    rightFiles.forEach((file) => {
+    formData.append('files', file); // остальные файлы
     });
     // 2) Текстовая часть JSON-массива ID дефектов
     formData.append('defectTypes', JSON.stringify(selectedDefects));
 
 
     try {
-        const response = await fetch('https://....', { // сюда апи 
+        const response = await fetch('http://127.0.0.1:8000/check', { // сюда апи 
             method: 'POST',
             body: formData,
         });

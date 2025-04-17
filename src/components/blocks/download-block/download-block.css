@@ -4,8 +4,6 @@
     max-width: 1414px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
 }
 
 .download-block__text{
@@ -28,7 +26,6 @@
     border-radius: 15px;
     background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
 }
 
 .download-block__checkbox-item {
@@ -92,7 +89,6 @@
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
 }
 
 .download-block__text-overlay {
@@ -111,6 +107,10 @@
     height: 112.88px;
 }
 
+.picture-block__namefile-overlay1{
+    display: none;
+}
+
 .download-block__btn{
     display: flex;
     align-items: center;
@@ -124,20 +124,15 @@
     background: linear-gradient(45deg, #9021AC, #C8459F);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-
-
 }
 
 .download-block__svg{
     width: 107px;
     height: 107px;
-    
-    
 }
 
 .download-block__download{
     margin-top: 250px;
-
 }
 
 .download-block__text1{
@@ -188,18 +183,80 @@
     border: none;
     padding: 15px 30px;
     font-size: 24px;
-    border-radius: 8px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 400px;
     height: 68px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-
-    
 }
 
 .download-block__submit-btn:hover {
     transform: translateY(-2px);
+}
+
+@media (max-width: 1357px){
+    .download-block__container{
+        max-width: 286px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .download-block__text{
+        font-size: 20px;
+    }
+    .download-block__typedefects{
+        max-width: 286px;
+    }
+    .download-block__checkbox-label{
+        font-size: 16px;
+    }
+    .download-block__blocks{
+        gap: 40px;
+    }
+    .download-block__block{
+        width: 286px;
+        height: 200px;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .download-block__left-block,
+    .download-block__right-block{
+        gap: 14px;
+    }
+
+    .download-block__download{
+        margin-top: 180px;
+    }
+    .download-block__text-overlay{
+        font-size: 18px;
+        height: 60px;
+    }
+    .download-block__btn{
+        width: 286px;
+        height: 44px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .download-block__svg{
+        width: 49px;
+        height: 49px;
+    }
+    .download-block__text1{
+        line-height: 1.4; 
+        font-size: 16px;
+        z-index: 10;
+    }
+
+    .download-block__submit-container{
+        margin-top: 20px;
+    }
+    .download-block__submit-btn {
+        font-size: 16px;
+        width: 286px;
+        height: 50px;
+    }
     
+    
+
 }

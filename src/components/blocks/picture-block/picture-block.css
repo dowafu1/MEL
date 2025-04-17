@@ -4,8 +4,6 @@
     max-width: 1414px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
     margin-top: 90px;
 }
 
@@ -20,8 +18,13 @@
     flex-direction: column;
     gap: 57px;
 }
-.picture-block__blocks{
+.picture-block__blocks1{
     display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+.picture-block__blocks2{
+    display: none;
     flex-wrap: wrap;
     gap: 50px;
 }
@@ -58,6 +61,7 @@
 }
 
 .picture-block__img{
+    position: relative;
     width: 570px;
     height: 512px;
     border-radius: 16px;
@@ -181,4 +185,132 @@
     font-size: 16px;
     background: linear-gradient(45deg, #F32C6D, #CB1D95);
 
+}
+
+
+
+@media (max-width: 1250px){
+    .picture-block__container{
+        max-width: 286px;
+    }
+
+    .picture-block__title{
+        gap: 10px;
+    }
+
+    .picture-block__text{
+        font-size: 20px;
+    }
+
+    .picture-block__btn1{
+        display: none;
+    }
+
+    .picture-block__blocks1{
+        display: none;
+    }
+
+    .picture-block__svg{
+        display: none;
+    }
+
+    .picture-block__blocks2{
+        display: flex;
+        position: relative;
+        display: inline-block;
+        align-items: start;
+        width: 286px;
+        border-radius: 15px;
+    }
+
+    .picture-block__img{
+        width: 286px;
+        height: 252px;
+        border-radius: 15px;
+    }
+
+    .picture-block__namefile-overlay{
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: #7E79A6;
+        opacity: 70%;
+        border-radius: 15px 15px 0 0;
+        z-index: 10;
+        text-align: center;
+    }
+    .picture-block__namefile-text{
+        padding: 7px 0 0 20px;
+
+    }
+
+    .picture-block__results1{
+        text-align: left;
+        margin-top: 10px;
+        width: 286px;
+        height: 70px;
+        background-color: #fff;
+        border-radius: 15px;
+        color: #000;
+    }
+    .picture-block__results-text1{
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .picture-block__results-text2{
+        margin-left: 20px;
+
+        font-size: 16px;
+    }
+
+    .picture-block__defects{
+        width: 286px;
+        height: 110px;
+        background-color: #fff;
+        border-radius: 15px;
+        margin-top: 13px;
+    }
+
+    .picture-block__defect-text{
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .picture-block__defect-list{
+        margin-left: 20px;
+    }
+
+    .picture-block__defect{
+        gap: 60px;
+    }
+    .picture-block__defect-text1{
+        font-size: 9px;
+    }
+
+    .picture-block__svgs{
+        display: flex;
+        width: 54px;
+        height: 54px;
+    }
+
+    .picture-block__btns{
+        margin-top: 20px;
+        margin-left: 0px;
+        align-items: center;
+        flex-direction: row;
+        display: flex;
+        gap: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .picture-block__btn2{
+        width: 200px;
+        height: 54px;
+    }
 }
