@@ -6,10 +6,8 @@ import pencilSng from './pencil.svg';
 import goBack from './goback.svg';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import SVG from 'react-inlinesvg';
 
 const PictureBlock = () => {
-    const containerRef = useRef(null);
     const [cards, setCards] = useState([]);
     const [selectedCard, setSelectedCard] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -17,29 +15,43 @@ const PictureBlock = () => {
     const [selectedDefect, setSelectedDefect] = useState(null);
 
     const svgContainerRef = useRef(null);
-    // const [svgContent, setSvgContent] = useState('');
 
-    const saveAllImages = async () => {
-        if (containerRef.current) {
-            const canvas = await html2canvas(containerRef.current);
-            const imgData = canvas.toDataURL('image/png');
-            const link = document.createElement('a');
-            link.href = imgData;
-            link.download = '/images/image1_processed.png';
-            link.click();
+    const saveCardsAsPDF = async () => {
+        const cards = document.querySelectorAll(".picture-block__left-block");
+      
+        if (cards.length === 0) {
+          alert("Нет карточек для сохранения");
+          return;
         }
-    };
-
-   
-
-    const saveCardAsPdf = async (card) => {
-        const doc = new jsPDF();
-        const canvas = await html2canvas(containerRef.current);
-        const imgData = canvas.toDataURL('image/png');
-
-        doc.addImage(imgData, 'PNG', 10, 10, 180, 160);
-        doc.save(`${card.filename}.pdf`);
-    };
+      
+        const pdf = new jsPDF("p", "mm", "a4");
+        const padding = 10;
+        const pageWidth = 210;
+        const _pageHeight = 297;
+        let _yOffset = 0;
+        let firstPage = true;
+      
+        for (const card of cards) {
+          const canvas = await html2canvas(card, {
+            scale: 2,
+          });
+      
+          const imgData = canvas.toDataURL("image/png");
+          const imgProps = pdf.getImageProperties(imgData);
+          const imgWidth = pageWidth - padding * 2;
+          const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+      
+          if (!firstPage) {
+            pdf.addPage();
+          } else {
+            firstPage = false;
+          }
+      
+          pdf.addImage(imgData, "PNG", padding, 10, imgWidth, imgHeight);
+        }
+      
+        pdf.save("cards.pdf");
+      };
 
     const removeSelectedDefect = () => {
         if (selectedDefect !== null && selectedCard?.defects) {
@@ -169,7 +181,7 @@ const PictureBlock = () => {
                                     <button className="picture-block__btn2" onClick={removeSelectedDefect}>
                                         Удалить дефект
                                     </button>
-                                    <button className="picture-block__btn3" onClick={() => saveCardAsPdf(selectedCard)}>
+                                    <button className="picture-block__btn3"  onClick={saveCardsAsPDF}>
                                         Сохранить карточку
                                     </button>
                                 </div>
@@ -182,7 +194,7 @@ const PictureBlock = () => {
                     <div className="picture-block__title">
                         <p className="picture-block__text">ВАШИ ИЗОБРАЖЕНИЯ</p>
                         <div>
-                            <button className="picture-block__btn1" onClick={saveAllImages}>
+                            <button className="picture-block__btn1"  onClick={saveCardsAsPDF}>
                                 Сохранить все карточки
                             </button>
                         </div>
@@ -251,7 +263,7 @@ const PictureBlock = () => {
                                         </div>
 
                                         <div>
-                                            <button className="picture-block__btn3" onClick={() => saveCardAsPdf(card)}>
+                                            <button className="picture-block__btn3"  onClick={saveCardsAsPDF}>
                                                 Сохранить карточку
                                             </button>
                                         </div>
