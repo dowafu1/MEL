@@ -103,7 +103,7 @@ const PictureBlock = () => {
                                         src={defect.correctionSvg}
                                         data-id={defect.id}
                                         alt={`defect-${defect.id}`}
-                                        className="svg-overlay__image"
+                                        className="picture-block__svg-image"
                                       />
                                     ))}
                                   </div>
@@ -208,7 +208,7 @@ const PictureBlock = () => {
                                             src={defect.correctionSvg}
                                             data-id={defect.id}
                                             alt={`defect-${defect.id}`}
-                                            className="svg-overlay__image"
+                                            className="picture-block__svg-image"
                                           />
                                         ))}
                                       </div>
