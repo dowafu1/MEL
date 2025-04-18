@@ -51,6 +51,8 @@ backend/
 │   ├── core/
 │   │   ├── config.py          # Configuration and database setup
 │   │   ├── logger.py          # Logging configuration
+│   ├── ML
+│   │   ├── cv2.py
 │   ├── models/
 │   │   ├── image.py           # Data models
 │   ├── services/
