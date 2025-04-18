@@ -2,26 +2,44 @@
   {
     "id": 1,
     "filename": "image1.jpg",
-    "processedImage": "/images/image1_processed.png",
+    "processedImage": "/images/image1.jpg",
     "matchPercent": 87,
     "confidence": 95,
     "defects": [
-      { "id": 101, "type": "царапина", "region": "верхний левый угол" },
-      { "id": 102, "type": "пятно", "region": "центр" }
-    ],
-    "correctionSvg": "/svg/image1.svg"
+      {
+        "id": 101,
+        "type": "царапина",
+        "region": "верхний левый угол",
+        "correctionSvg": "/svg/defect_101.svg"
+      },
+      {
+        "id": 102,
+        "type": "пятно",
+        "region": "центр",
+        "correctionSvg": "/svg/defect_102.svg"
+      }
+    ]
   },
 
   {
     "id": 2,
     "filename": "image2.jpg",
-    "processedImage": "/images/image1_processed.png",
+    "processedImage": "/images/image2.jpg",
     "matchPercent": 99,
     "confidence": 99,
     "defects": [
-      { "id": 101, "type": "царапина", "region": "верхний левый угол" },
-      { "id": 102, "type": "пятно", "region": "центр" }
-    ],
-    "correctionSvg": "/svg/image1.svg"
+      {
+        "id": 201,
+        "type": "царапина",
+        "region": "правый верхний угол",
+        "correctionSvg": "/svg/defect_201.svg"
+      },
+      {
+        "id": 202,
+        "type": "пятно",
+        "region": "низ",
+        "correctionSvg": "/svg/defect_202.svg"
+      }
+    ]
   }
 ]
